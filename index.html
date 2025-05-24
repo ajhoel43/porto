@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import (JetBrains Mono for IDE-like feel) */
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            /* Darker, IDE-like background gradient */
+            background: linear-gradient(to bottom right, #1a202c, #2d3748);
+            color: #e2e8f0; /* Light text for dark background */
+        }
+
+        /* Custom gradient for hero section and buttons */
+        .hero-gradient {
+            /* Dark blue to dark gray gradient for hero */
+            background: linear-gradient(to right, #2a4365, #4a5568);
+            position: relative; /* Needed for parallax background positioning */
+            overflow: hidden; /* Hide overflow from parallax effect */
+        }
+
+        /* Parallax background layer */
+        .hero-parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #2a4365, #4a5568); /* Same gradient as hero */
+            transform: translateY(0); /* Initial position */
+            z-index: -1; /* Behind content */
+        }
+
+        .section-gradient {
+            /* Darker gradient for sections, slightly different from body */
+            background: linear-gradient(to bottom right, #2d3748, #1a202c);
+        }
+
+        .card-gradient {
+            /* Darker gradient for cards, standing out from sections */
+            background: linear-gradient(to bottom right, #2d3748, #2a4365);
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Keyframe animations for hero section */
+        @keyframes fadeInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInFromBottom 0.8s ease-out forwards;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gray-900 shadow-md py-4 px-6 md:px-12 fixed w-full z-10 rounded-b-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-200 hover:text-cyan-400 transition duration-300 ease-in-out">
+                [Your Name]
+            </a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#about" class="text-gray-300 hover:text-cyan-400 font-medium transition duration-300 ease-in-out">About</a></li>
+                <li><a href="#skills" class="text-gray-300 hover:text-cyan-400 font-medium transition duration-300 ease-in-out">Skills</a></li>
+                <li><a href="#experience" class="text-gray-300 hover:text-cyan-400 font-medium transition duration-300 ease-in-out">Experience</a></li>
+                <li><a href="#projects" class="text-gray-300 hover:text-cyan-400 font-medium transition duration-300 ease-in-out">Projects</a></li>
+                <li><a href="#contact" class="text-gray-300 hover:text-cyan-400 font-medium transition duration-300 ease-in-out">Contact</a></li>
+            </ul>
+            <button class="md:hidden text-gray-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero-gradient text-gray-100 py-24 md:py-32 flex items-center justify-center min-h-screen-75 rounded-b-3xl shadow-xl">
+        <div class="hero-parallax-bg" id="heroParallaxBg"></div>
+
+        <div class="container mx-auto text-center px-6 relative z-0">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">
+                Hi, I'm <span class="text-cyan-400">[Your Name]</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up delay-200">
+                A Passionate Web Developer Building Engaging Digital Experiences.
+            </p>
+            <a href="#contact" class="inline-block bg-cyan-600 text-white hover:bg-cyan-700 hover:text-cyan-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="section-gradient py-16 md:py-24 rounded-3xl shadow-lg mx-4 md:mx-auto max-w-6xl -mt-16 relative z-10 mb-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-100 mb-8">About Me</h2>
+            <p class="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                I am a dedicated Web Developer with a strong foundation in building robust and scalable applications. My journey in programming began in 2015, constantly evolving with new technologies and challenges. I thrive on transforming complex ideas into intuitive and efficient digital solutions.
+            </p>
+            <p class="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mt-4">
+                With a passion for clean code and user-centric design, I am always eager to learn and adapt to the ever-changing landscape of web development.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 md:py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-100 mb-12">My Skills</h2>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                <span class="bg-blue-800 text-blue-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">React Native</span>
+                <span class="bg-blue-800 text-blue-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">Next.js</span>
+                <span class="bg-blue-800 text-blue-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">HTML5</span>
+                <span class="bg-blue-800 text-blue-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">CSS3</span>
+                <span class="bg-blue-800 text-blue-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">JavaScript (ES6+)</span>
+                <span class="bg-blue-800 text-blue-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">Tailwind CSS</span>
+
+                <span class="bg-green-800 text-green-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">CodeIgniter</span>
+                <span class="bg-green-800 text-green-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">PHP</span>
+                <span class="bg-green-800 text-green-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">WebSockets</span>
+
+                <span class="bg-purple-800 text-purple-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">MSSQL</span>
+                <span class="bg-purple-800 text-purple-200 px-5 py-2 rounded-full text-lg font-semibold shadow-3xl transition duration-300 hover:scale-105">Database Design</span>
+
+                <span class="bg-gray-700 text-gray-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">API Development</span>
+                <span class="bg-gray-700 text-gray-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">System Architecture</span>
+                <span class="bg-gray-700 text-gray-200 px-5 py-2 rounded-full text-lg font-semibold shadow-md transition duration-300 hover:scale-105">Problem Solving</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section-gradient py-16 md:py-24 rounded-3xl shadow-lg mx-4 md:mx-auto max-w-6xl mb-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-100 mb-12">Work Experience</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div class="card-gradient p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-cyan-400 mb-2">Starting Programming Journey</h3>
+                    <p class="text-gray-400 text-lg mb-4">2015</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Began my programming journey using <span class="font-medium text-gray-200">CodeIgniter</span> for web development and working with <span class="font-medium text-gray-200">MSSQL databases</span>. This period laid the foundational understanding of web application architecture and database management.
+                    </p>
+                </div>
+
+                <div class="card-gradient p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-cyan-400 mb-2">Ride Hailing Project</h3>
+                    <p class="text-gray-400 text-lg mb-4">2017</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Contributed to a Ride Hailing Project, developing the mobile application using <span class="font-medium text-gray-200">React Native</span>. The backend infrastructure was powered by <span class="font-medium text-gray-200">CodeIgniter</span>, handling complex business logic and API integrations.
+                    </p>
+                </div>
+
+                <div class="card-gradient p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-cyan-400 mb-2">Lead Developer & Real-Time Chat App</h3>
+                    <p class="text-gray-400 text-lg mb-4">2017</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Stepped into a Lead Developer role. Spearheaded the development of a Real-Time Chat Application using <span class="font-medium text-gray-200">React Native</span> for the frontend and <span class="font-medium text-gray-200">Websockets</span> for real-time communication. This chat feature was seamlessly embedded into our existing Marketplace App, enhancing user engagement.
+                    </p>
+                </div>
+
+                <div class="card-gradient p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-cyan-400 mb-2">SOP Management Project</h3>
+                    <p class="text-gray-400 text-lg mb-4">2018</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Worked on a Standard Operating Procedure (SOP) Management project, creating a system to guide employees through their tasks based on defined SOPs. Utilized <span class="font-medium text-gray-200">React Native</span> for the user interface and <span class="font-medium text-gray-200">CodeIgniter</span> for the backend, ensuring efficient workflow management.
+                    </p>
+                </div>
+
+                <div class="card-gradient p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-cyan-400 mb-2">Sole Developer: CRM System</h3>
+                    <p class="text-gray-400 text-lg mb-4">2021</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Undertook the role of a Sole Developer to build a comprehensive Customer Relationship Management (CRM) System. The entire system was developed using <span class="font-medium text-gray-200">CodeIgniter</span>, covering various aspects of customer management and business operations.
+                    </p>
+                </div>
+
+                <div class="card-gradient p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-cyan-400 mb-2">Learning New Skills: Next.js Integration</h3>
+                    <p class="text-gray-400 text-lg mb-4">2024</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Currently expanding my skillset by learning and building new systems with <span class="font-medium text-gray-200">Next.js</span>, a powerful React framework for production. This is being paired with continued development on <span class="font-medium text-gray-200">React Native</span> applications, embracing modern full-stack development practices.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 md:py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-100 mb-12">My Projects</h2>
+            <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                This section will showcase my key projects, including descriptions, technologies used, and links to live demos or repositories. Stay tuned for updates!
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <div class="card-gradient p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-100 mb-2">Project Title One</h3>
+                    <p class="text-gray-400 mb-4">A brief description of this project and its purpose.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">React</span>
+                        <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Node.js</span>
+                    </div>
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 font-medium transition duration-300">View Project &rarr;</a>
+                </div>
+                <div class="card-gradient p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-100 mb-2">Project Title Two</h3>
+                    <p class="text-gray-400 mb-4">Another project demonstrating my skills in a different area.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Next.js</span>
+                        <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Firebase</span>
+                    </div>
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 font-medium transition duration-300">View Project &rarr;</a>
+                </div>
+                <div class="card-gradient p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-100 mb-2">Project Title Three</h3>
+                    <p class="text-gray-400 mb-4">Showcasing a mobile application or a specific feature.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">React Native</span>
+                        <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">API</span>
+                    </div>
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 font-medium transition duration-300">View Project &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-gradient py-16 md:py-24 rounded-t-3xl shadow-lg mx-4 md:mx-auto max-w-6xl mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-100 mb-8">Get in Touch</h2>
+            <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8">
+                I'm always open to new opportunities and collaborations. Feel free to reach out!
+            </p>
+            <div class="flex flex-col items-center space-y-4">
+                <a href="mailto:your.email@example.com" class="inline-block bg-cyan-600 text-white hover:bg-cyan-700 hover:text-cyan-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    Email Me
+                </a>
+                <p class="text-gray-400">or connect on social media:</p>
+                <div class="flex space-x-6">
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-gray-300 hover:text-cyan-400 transition duration-300 ease-in-out">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/yourprofile" target="_blank" class="text-gray-300 hover:text-cyan-400 transition duration-300 ease-in-out">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.799 8.207 11.387.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.34.725-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.49.998.108-.775.418-1.305.762-1.605-2.665-.3-5.464-1.333-5.464-5.93 0-1.31.465-2.38 1.235-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3-.12.95-.263 1.95-.395 2.95-.395 1 0 2.002.132 2.95.395 2.3-.2 3.3.12 3.3.12.65 1.66.24 2.88.12 3.18.77.84 1.235 1.91 1.235 3.22 0 4.61-2.8 5.62-5.475 5.92.43.37.82 1.1.82 2.22 0 1.606-.015 2.89-.015 3.28 0 .32.21.69.82.57C20.562 21.799 24 17.302 24 12c0-6.627-5.373-12-12-12z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8 text-center mt-12 rounded-t-lg">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+            <p class="text-sm mt-2">Designed with ❤️ and Tailwind CSS</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.querySelector('header button');
+        const navLinks = document.querySelector('header ul');
+
+        if (mobileMenuButton && navLinks) {
+            mobileMenuButton.addEventListener('click', () => {
+                navLinks.classList.toggle('hidden');
+            });
+        }
+
+        // Parallax Effect for Hero Section
+        const heroParallaxBg = document.getElementById('heroParallaxBg');
+        if (heroParallaxBg) {
+            window.addEventListener('scroll', () => {
+                // Calculate scroll position relative to the top of the hero section
+                const scrollPosition = window.pageYOffset;
+                // Adjust the parallax speed (e.g., 0.3 means it moves at 30% of scroll speed)
+                heroParallaxBg.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+            });
+        }
+    </script>
+</body>
+</html>
